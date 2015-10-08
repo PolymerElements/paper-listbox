@@ -1,24 +1,24 @@
 {
-  "name": "paper-menu",
+  "name": "paper-listbox",
   "version": "1.1.1",
-  "description": "Implements an accessible material design menu",
+  "description": "Implements an accessible material design listbox",
   "authors": "The Polymer Authors",
   "keywords": [
     "web-components",
     "polymer",
-    "menu"
+    "listbox"
   ],
   "main": [
-    "paper-menu.html",
-    "paper-submenu.html"
+    "paper-listbox.html",
+    "paper-sublistbox.html"
   ],
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git://github.com/PolymerElements/paper-menu"
+    "url": "git://github.com/PolymerElements/paper-listbox"
   },
   "license": "http://polymer.github.io/LICENSE.txt",
-  "homepage": "https://github.com/PolymerElements/paper-menu",
+  "homepage": "https://github.com/PolymerElements/paper-listbox",
   "ignore": [],
   "dependencies": {
     "polymer": "Polymer/polymer#^1.1.0",

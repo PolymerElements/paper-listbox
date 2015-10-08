@@ -1,3 +1,3 @@
-# paper-menu
+# paper-listbox
 
-`<paper-menu>` implements an accessible menu control with Material Design styling.
+`<paper-listbox>` implements an accessible listbox control with Material Design styling.
