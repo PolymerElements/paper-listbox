@@ -60,7 +60,21 @@ of a listbox item will also focus it.
 @hero hero.svg
 @demo demo/index.html
 -->
+  <script>
+    (function() {
+      Polymer({
+        is: 'paper-listbox',
 
+        behaviors: [
+          Polymer.IronMenuBehavior
+        ],
+
+        hostAttributes: {
+          role: 'listbox'
+        }
+      });
+    })();
+  </script>
 <dom-module id="paper-listbox">
   <template>
     <style>
@@ -80,19 +94,5 @@ of a listbox item will also focus it.
     </div>
   </template>
 
-  <script>
-    (function() {
-      Polymer({
-        is: 'paper-listbox',
 
-        behaviors: [
-          Polymer.IronMenuBehavior
-        ],
-
-        hostAttributes: {
-          role: 'listbox'
-        }
-      });
-    })();
-  </script>
 </dom-module>
