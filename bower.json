@@ -9,8 +9,7 @@
     "listbox"
   ],
   "main": [
-    "paper-listbox.html",
-    "paper-sublistbox.html"
+    "paper-listbox.html"
   ],
   "private": true,
   "repository": {
