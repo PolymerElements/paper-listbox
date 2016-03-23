@@ -8,9 +8,7 @@
     "polymer",
     "listbox"
   ],
-  "main": [
-    "paper-listbox.html"
-  ],
+  "main": "paper-listbox.html",
   "private": true,
   "repository": {
     "type": "git",
