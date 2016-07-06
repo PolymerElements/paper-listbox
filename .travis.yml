@@ -2,22 +2,22 @@ language: node_js
 sudo: required
 cache:
   directories:
-    - node_modules
+  - node_modules
 matrix:
   include:
-    - node_js: stable
-      script: xvfb-run -a wct --simpleOutput -l firefox -l chrome
-      addons:
-        firefox: latest
-        apt:
-          sources:
-            - google-chrome
-          packages:
-            - google-chrome-stable
-    - node_js: node
-      script:
-        - >
-          if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then
+  - node_js: stable
+    script: xvfb-run -a wct --simpleOutput -l firefox -l chrome
+    addons:
+      firefox: latest
+      apt:
+        sources:
+        - google-chrome
+        packages:
+        - google-chrome-stable
+  - node_js: node
+    script:
+    - |
+      if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then
 
 
 
@@ -25,22 +25,20 @@ matrix:
 
 
 
-            wct --simpleOutput -s 'Windows 10/microsoftedge' -s 'Windows
+        wct --simpleOutput -s 'Windows 10/microsoftedge' -s 'Windows
 
 
 
-          8.1/internet explorer@11' -s 'Windows 7/internet explorer@10' -s 'OS
-          X 10.10/safari@8' -s 'OS X 10.9/safari@7'
-
-          fi
+      8.1/internet explorer@11' -s 'Windows 7/internet explorer@10' -s 'OS X 10.10/safari@8' -s 'OS X 10.9/safari@7'
+      fi
 before_script:
-  - npm install -g bower polylint web-component-tester
-  - bower install
-  - polylint
+- npm install -g bower polylint web-component-tester
+- bower install
+- polylint
 env:
   global:
-    - secure: uR09ZOD9Sm4HB8QLY2CAr2dWkjxzCggAQF7Tf9mjyk6ZFdzIkktv/IG5Q6ywUPrBwEgpR15a//vknAh1e96w2sdsU7x4SHdnVFV46mN0i3higjiQ0V6qSbFKH0Lom89yh3+nQtmJ8JCF/zWRYGsgpfUC/O3kRQv0ghZ0pjWeO57pvSv8mOTRMUi34cSJchBDZj9U1CzJqJYakST30XBMDHabqm6wbIqvSDve9duPiFPJi6GloRfMXxzC+Lt+WpEdjiYuZ33cmqepW3TEQf0TiZFqg9aQcBINv8723O9IcInvylXmtHRCBikCqoXE6xUNDJZWXbjxzNOwiFO4WSF9t1M7il99ByE3r4MwHlmKTCwHUb4VTvfXy1Ad+sZ0dwDJl92CmTd1/jJGXLXrqUjnUTDFucH4OxQPWtSPxOINzxBebXq+x+cpjdZPe5wp0BpcNiYN0QBNOT08C9B+vLw+/cSn5FXkYO/T+8F/Lhu6SYN1ZQ3HGpjUsNpqhEJgw+l6syQoIZfs3xN6mWqWFbs1RgtGJNrJRwn8umH1I8xy+5yZaif88RhoqTSZnTIkVWMF3/USEDZlhPv+iivFn3Oq3sAopxbR39s9KAGCMu9XdaJk/WA8crS3Jeeq+78tknrpO0VTth8DY6fHY/dV56ZJrc8wHO5souGzg2NLC+D/X20=
-    - secure: k4qJ+VUFYDfWN1FEGqDSLXz6s6zb9fQu9Pwc+b4EMCvhC4Tfhdk7LbGDaw8cnBuDEA1jA9NvmbNN5PqvQ65MxTtPOWpQ/G2N08x9BVJ/u/MkWIY5/LZZoabaiHj4pQAA10sBEeBnhOhfKjNHT3H9s1lo2aWTucc+27fhiWsf2Kmkc4meYU9HKLazrCh+34neOdrkLAMA0EGIEn8OSsmDNhaY5yL71X3wil3qNvfpzXIy0ceAPvLqhM4WvEEYSeel7AohlSyTSC/9GdBvdqN6UmPKJTrk1J2wMsAMcznWDjashORcf/PaVVg4WHfYEBuDk7ECnX+G3Zb02hhw1JnVP+zK/wI9vwwkQXvYqNa+Q+713cWuGXYgVwH2TXKpsO6u69WHw50yKn6k+oOqDvX5SzRgOouFaHFO4GAllgFuX4iAltpluE+aE7I98C968FI3JrHEhCSxH8NlmmPRx794MKUsXBzPLeZ8CqrFs2llvBjVif0vJkad+X4xSxXgxs7SzK0sQS+CtKG3EFLMRNqi9OR98LRFgmkwM7OtOABnZ49lVXqrIaBk0quKAvjSg6PPXf4BUOJdvs8G91N1sf80XOfMj22iGdVUVnmwcktfhdwbm+hN5ToGgbVFTpYOM45+husfmUn7DamYmPudN2EJoawqe44zD6MfjfwqjJCv5Dk=
+  - secure: qWAnfdCt+M+aNIKs+0iWMn4Fg61SaRelUd79BqwkZeI9Aldwv54yqc+J+p5J+PwRoBNCYfzOxQeI/2SRwzGb8ZytlbY65nacR8iCFwgOkeNJZcKvP5IqcxVSiGg4xXrMzZX7kI0GXGqUCWyUwFZ1XZSonJObnk92ZWf8v1qvYd+eqQprerkdG7ODN53o6JreDhcIxAuaPBdIXkqInBha8Wj0vTXU+K/8PP32wylxWeylUt0VUE9jdZz07BkpUIvZxpQ+VK9TqsHAPV4ymCa02Bcvxal0p6zOTwjmouN2NeLIT1VU4SsHqMkUOu9EvfCEETYH2E6cGzT+vpdnLKC8O2WfxwRy1XNubh2lrTG9IXcb9BBCIGurImhSFxeLTU4P2rg7t48FLmg+9zQlWcKlmkN9jEvkqfAOJIkFMSpggjHu1Cxj9QjIPChCM+LULdsKShQKbd7Gv5iV70tlRRIb78LVdk8qSTOTa19b6wZQy9Gb4sJnfVCfx0eKGg+FubLxgwTn2hhoUdU9cfgX42bZQ59UjLTRQjJwdKOhy5zFevgtdGP1nONXWHDPkpa2M9iQPvRbQ95LCYm40yCerfbhKTJmdnMKwEgtFA/HniWn64ujydiJ0/UMCzn3UYIC75zb+ETKAZCGkHmL3UYkch9V59qCnhtF/5LR91ylAY4NLMQ=
+  - secure: k+ZP9HMOxiTEAU0UvM0tAVumzq3Mvpooh3/DGHPb/9hCW/dECAOrenJBDwiDsmuXY2WPppb9Nu8M5Ek/grse5mysm954SCKzFpWAk1m1MDwmcoLjCo6I/S1/BCAHxQbxIynYf0eSr56MpM94+6RxmFTd9SPXKoJmO0X3v5TpDOXl6yGTI8oKa6d6RSGOfaXl8Zaxpz4IG7FZbLaheoeyfzPzB4rg3Bn/klIxBcL/timuce1ckWJSVyCbvbd8Hphouh8yMfKKl3LWWAOkCVGdM4hTQNBZNHTG2Mno7sLpxKEJN9EMLEAFxiCr5vGf690eZQY9YpLt3/zT6pCIaz3ekPNcslgULLSIN13CXeP0Ms6r5DqpEk9MkfmiRpKDmedHOzKwUIQ0cIx79SecsEKSQjSQrOT+DfsmQHpCL06Ou0yz61em5Rt+0xLkGPJpXRkCNiNieavcdCmw+hZCZCxGef7Fq+I/teh3Yws85fLjPLrtOgPQqJRwDwBdxzVflf+mBqCYKqqc2Omg7BQCzcis+A0iGAYpvBqcy9bZnaiq/ynxdmg2w8glGh/KyFCGkIll8op9l/rdmb2XEmSzjzCtgPvasnhJfUBvIsmp+P2Y6f6kbD6mp68h5CzmHDNLqrGVea5vEN1Sp16vOZN4ODCYvW8rxCBIv+x/qEje4MCyTcQ=
 dist: trusty
 node_js: stable
 addons:
@@ -48,6 +46,6 @@ addons:
   sauce_connect: true
   apt:
     sources:
-      - google-chrome
+    - google-chrome
     packages:
-      - google-chrome-stable
+    - google-chrome-stable
