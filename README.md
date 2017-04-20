@@ -17,7 +17,7 @@ thing! https://github.com/PolymerLabs/tedium/issues
 _[Demo and API docs](https://elements.polymer-project.org/elements/paper-listbox)_
 
 
-##&lt;paper-listbox&gt;
+## &lt;paper-listbox&gt;
 
 Material design: [Menus](https://www.google.com/design/spec/components/menus.html)
 
