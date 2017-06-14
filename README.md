@@ -1,7 +1,5 @@
 [![Build status](https://travis-ci.org/PolymerElements/paper-listbox.svg?branch=master)](https://travis-ci.org/PolymerElements/paper-listbox)
-
-_[Demo and API docs](https://elements.polymer-project.org/elements/paper-listbox)_
-
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/PolymerElements/paper-listbox)
 
 ## &lt;paper-listbox&gt;
 
