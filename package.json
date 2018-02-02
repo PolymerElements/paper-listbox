@@ -1,0 +1,10 @@
+{
+  "name": "@polymer/paper-listbox",
+  "private": true,
+  "description": "Implements an accessible material design listbox",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/PolymerElements/paper-listbox"
+  },
+  "license": "http://polymer.github.io/LICENSE.txt"
+}
