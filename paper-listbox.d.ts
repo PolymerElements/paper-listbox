@@ -56,7 +56,6 @@
  * of a listbox item will also focus it.
  */
 interface PaperListboxElement extends Polymer.Element, Polymer.IronMenuBehavior {
-  hostAttributes: object|null;
 }
 
 interface HTMLElementTagNameMap {
