@@ -1,4 +1,4 @@
-<!--
+/**
 @license
 Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
 This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
@@ -6,13 +6,8 @@ The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
 The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
 Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
--->
-
-<link rel="import" href="../polymer/polymer.html">
-<link rel="import" href="../iron-menu-behavior/iron-menu-behavior.html">
-<link rel="import" href="../paper-styles/default-theme.html">
-
-<!--
+*/
+/**
 Material design: [Menus](https://www.google.com/design/spec/components/menus.html)
 
 `<paper-listbox>` implements an accessible listbox control with Material Design styling. The focused item
@@ -59,10 +54,20 @@ of a listbox item will also focus it.
 @element paper-listbox
 @hero hero.svg
 @demo demo/index.html
--->
+*/
+/*
+  FIXME(polymer-modulizer): the above comments were extracted
+  from HTML and may be out of place here. Review them and
+  then delete this comment!
+*/
+import '@polymer/polymer/polymer-legacy.js';
 
-<dom-module id="paper-listbox">
-  <template>
+import { IronMenuBehavior } from '@polymer/iron-menu-behavior/iron-menu-behavior.js';
+import '@polymer/paper-styles/default-theme.js';
+import { Polymer } from '@polymer/polymer/lib/legacy/polymer-fn.js';
+import { html } from '@polymer/polymer/lib/utils/html-tag.js';
+Polymer({
+  _template: html`
     <style>
       :host {
         display: block;
@@ -76,18 +81,11 @@ of a listbox item will also focus it.
     </style>
 
     <slot></slot>
-  </template>
+`,
 
-  <script>
-    (function() {
-    Polymer({
-      is: 'paper-listbox',
+  is: 'paper-listbox',
+  behaviors: [IronMenuBehavior],
 
-      behaviors: [Polymer.IronMenuBehavior],
-
-      /** @private */
-      hostAttributes: {role: 'listbox'}
-    });
-    })();
-  </script>
-</dom-module>
+  /** @private */
+  hostAttributes: {role: 'listbox'}
+});
