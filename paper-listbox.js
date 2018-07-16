@@ -64,7 +64,6 @@ will also focus it.
 
 @group Paper Elements
 @element paper-listbox
-@hero hero.svg
 @demo demo/index.html
 */
 Polymer({
