@@ -62,11 +62,11 @@ through the listbox with the up and down arrow keys, esc to exit the listbox,
 and enter to activate a listbox item. Typing the first letter of a listbox item
 will also focus it.
 
-@group Paper Elements
 @element paper-listbox
 @demo demo/index.html
 */
 Polymer({
+  /** @override */
   _template: html`
     <style>
       :host {
